@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
-    "prebuild": "rimraf dist",
+    "prebuild": "rimraf dist && rimraf tsconfig.tsbuildinfo",
     "build": "tsc",
     "start": "npm run build && node dist/index.js",
     "serve": "node dist/index.js"

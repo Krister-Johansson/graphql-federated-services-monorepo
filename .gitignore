@@ -1,6 +1,9 @@
 # Node modules
 node_modules/
 
+# Dist folder
+dist/
+
 # Dist folders for each package
 packages/*/dist/
 packages/*/tsconfig.tsbuildinfo
