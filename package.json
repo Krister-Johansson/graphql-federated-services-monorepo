@@ -1,0 +1,27 @@
+{
+  "name": "graphql-federated-services-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "concurrently \"npm run start:material\" \"npm run start:zone\" \"npm run start:stock\" \"npm run start:supergraph\"",
+    "start:material": "npm run build --workspace=packages/material-service && npm run serve --workspace=packages/material-service",
+    "start:zone": "npm run build --workspace=packages/zone-service && npm run serve --workspace=packages/zone-service",
+    "start:stock": "npm run build --workspace=packages/stock-service && npm run serve --workspace=packages/stock-service",
+    "start:supergraph": "npm run build --workspace=packages/supergraph-gateway && npm run serve --workspace=packages/supergraph-gateway",
+    "build": "tsc -b packages/*",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "concurrently": "^9.0.1",
+    "ts-node": "^10.9.2",
+    "@typescript-eslint/eslint-plugin": "^8.8.1",
+    "@typescript-eslint/parser": "^8.8.1",
+    "eslint": "^9.12.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3"
+  }
+}
